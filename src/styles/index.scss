@@ -12,7 +12,6 @@
 }
 body {
   background-color: var(--primary-color);
-  position: absolute;
 }
 .App {
   display: flex;
@@ -59,7 +58,7 @@ body {
 .products-section {
   color: var(--text-color);
   margin-left: 50px;
-  width: 1700px;
+  width: 100%;
   h1 {
     margin-bottom: 40px;
   }
@@ -69,7 +68,7 @@ body {
     margin-bottom: 40px;
   }
   .product-container {
-    width: 100%;
+    width: inherit;
     h5 {
       color: var(--text-color);
       font-weight: 100;
@@ -153,4 +152,38 @@ body {
 
 .slick-slide {
   padding: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    width: 550px;
+    .filters-section {
+      margin: auto;
+      margin-top: 15px;
+    }
+    .products-section {
+      margin: auto;
+      h1 {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      h4 {
+        text-align: center;
+      }
+      .product-container {
+        width: 500px;
+        margin: auto;
+        overflow: hidden;
+
+        h5 {
+          text-align: center;
+        }
+
+        .products-bar {
+          width: 500px;
+        }
+      }
+    }
+  }
 }

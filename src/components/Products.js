@@ -8,19 +8,41 @@ function Products(props) {
 
   console.log("brands:", brands);
   console.log("products:", products);
+  // products-bar
   const settings = {
-    className: "center products-bar",
-    infinite: true,
-    centerPadding: "60px",
+    className: "products-bar",
+    dots: false,
+    infinite: false,
+    speed: 500,
     slidesToShow: 4,
-    swipeToSlide: true,
-    autoplaySpeed: 1000,
-    arrows: true,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
-    },
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
