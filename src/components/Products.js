@@ -14,6 +14,7 @@ function Products(props) {
     centerPadding: "60px",
     slidesToShow: 4,
     swipeToSlide: true,
+    autoplaySpeed: 1000,
     arrows: true,
     afterChange: function (index) {
       console.log(
